@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAURIANE & THIAGO - 18/03/2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.myloview.com.br/quadros/coracoes-vermelhos-em-um-fundo-preto-romance-lovers-dia-dos-namorados-bokeh-brilhante-turva-700-150122562.jpg'); /* Substitua com a URL da sua imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            color: #ff3366;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .countdown {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffccff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .countdown span {
+            font-size: 40px;
+            color: #ff3366;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ESTAMOS JUNTOS À...</h1>
+        <p class="countdown">
+            <span id="days"></span> dias, 
+            <span id="hours"></span> horas, 
+            <span id="minutes"></span> minutos, 
+            <span id="seconds"></span> segundos.
+        </p>
+    </div>
+
+    <script>
+        // Definindo a data de início (18 de março de 2025)
+        var startDate = new Date("Mar 18, 2025 00:00:00").getTime();
+
+        // Atualizando a contagem acumulada a cada 1 segundo
+        setInterval(function() {
+            // Pegando a data e hora atual
+            var now = new Date().getTime();
+
+            // Calculando a diferença entre a data atual e a data de início
+            var distance = now - startDate;
+
+            // Calculando os dias, horas, minutos e segundos
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Exibindo a contagem no HTML
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+        }, 1000);
+    </script>
+
+</body>
+</html>
